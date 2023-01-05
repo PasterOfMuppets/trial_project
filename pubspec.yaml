@@ -19,6 +19,13 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  cupertino_icons: ^0.1.2
+  font_awesome_flutter: ^8.8.1
+  # chewie: ^0.9.10
+  # video_player: ^0.10.11+2
+  material_design_icons_flutter: ^4.0.5345
+  icons_helper: ^1.0.4
+  # youtube_player_flutter: ^7.0.0+7
 
 dev_dependencies:
   flutter_test:
