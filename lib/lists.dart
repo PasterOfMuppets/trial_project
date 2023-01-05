@@ -22,7 +22,7 @@ class ButtonRowInfo {
 List<ButtonInfo> rowFolderButtons = [
   ButtonInfo('Help', FontAwesomeIcons.font, 'tbd'),
   ButtonInfo('Reading', FontAwesomeIcons.book, 'tbd'),
-  ButtonInfo('Calendar', FontAwesomeIcons.book, 'tbd',
+  ButtonInfo('Calendar', FontAwesomeIcons.book, 'tbd'),
   ButtonInfo('Numbers', FontAwesomeIcons.book, 'tbd'),
   ButtonInfo('People', FontAwesomeIcons.book, 'tbd'),
   ButtonInfo('Food and Drink', FontAwesomeIcons.book, 'tbd'),
