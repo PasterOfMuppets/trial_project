@@ -34,8 +34,8 @@ class MainPage extends StatelessWidget {
               return Container(
                 decoration: BoxDecoration(
                     border: Border.all(
-                      color: Colors.grey,
-                      width: 1.0,
+                      color: Colors.black,
+                      width: 0.5,
                     ),
                     color: Colors.grey),
 //                color: Colors.grey,
@@ -43,6 +43,25 @@ class MainPage extends StatelessWidget {
                   child: ButtonCard(
                       buttonImage: rowFolderButtons[index].icon,
                       buttonName: rowFolderButtons[index].name),
+                ),
+              );
+            }
+            if (index >= 11 && index < 22) {
+              debugPrint('index: $index');
+              debugPrint('icon:  $rowFolderButtons');
+              int buttonIndex = index - 11;
+              return Container(
+                decoration: BoxDecoration(
+                    border: Border.all(
+                      color: Colors.black,
+                      width: 0.5,
+                    ),
+                    color: Colors.grey),
+//                color: Colors.grey,
+                child: Center(
+                  child: ButtonCard(
+                      buttonImage: rowCommButtons[buttonIndex].icon,
+                      buttonName: rowCommButtons[buttonIndex].name),
                 ),
               );
             }
@@ -80,7 +99,7 @@ class MainPage extends StatelessWidget {
                   child: Text(
                     colorNames[colorIndex],
                     style: TextStyle(
-                        fontSize: 65,
+                        fontSize: 20,
                         color: colorNames[colorIndex] == 'Black'
                             ? Colors.white
                             : Colors.black),
