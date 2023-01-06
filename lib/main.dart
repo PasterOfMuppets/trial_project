@@ -1,7 +1,11 @@
+import 'dart:async';
 import 'dart:html';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'lists.dart';
+import 'reuseableCards.dart';
+import "lists.dart";
+import "reusableButtons.dart";
 
 void main() => runApp(MyApp());
 
@@ -24,40 +28,21 @@ class MainPage extends StatelessWidget {
           132,
           (index) {
             if (index >= 0 && index < 11) {
-              List<Map<String, dynamic>> _buttons = [
-                {'label': 'Help', 'icon': Icons.help},
-                {'label': 'Reading', 'icon': Icons.book},
-                {'label': 'Calendar', 'icon': Icons.calendar_month},
-                {'label': 'Number', 'icon': Icons.looks_one},
-                {'label': 'Number', 'icon': Icons.looks_two},
-                {'label': 'People', 'icon': Icons.people},
-                {'label': 'Group', 'icon': Icons.group},
-              ];
-
-              int buttonIndex = index;
-              if (buttonIndex < _buttons.length) {
-                return Container(
-                  child: Center(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Icon(_buttons[buttonIndex]['icon']),
-                        SizedBox(width: 10),
-                        Text(_buttons[buttonIndex]['label']),
-                      ],
-                    ),
-                  ),
-                );
-              }
-            }
-            if (index == 11) {
+              debugPrint('index: $index');
+              debugPrint('icon:  $rowFolderButtons');
+              int buttonIndex = index - 0;
               return Container(
-                color: Colors.grey,
+                decoration: BoxDecoration(
+                    border: Border.all(
+                      color: Colors.grey,
+                      width: 1.0,
+                    ),
+                    color: Colors.grey),
+//                color: Colors.grey,
                 child: Center(
-                  child: Text(
-                    '11',
-                    style: TextStyle(color: Colors.white),
-                  ),
+                  child: ButtonCard(
+                      buttonImage: rowFolderButtons[index].icon,
+                      buttonName: rowFolderButtons[index].name),
                 ),
               );
             }
@@ -68,7 +53,7 @@ class MainPage extends StatelessWidget {
                 child: Center(
                   child: Text(
                     '${index - 44}',
-                    style: TextStyle(color: Colors.white),
+                    style: TextStyle(color: Colors.white, fontSize: 80),
                   ),
                 ),
               );
@@ -95,6 +80,7 @@ class MainPage extends StatelessWidget {
                   child: Text(
                     colorNames[colorIndex],
                     style: TextStyle(
+                        fontSize: 65,
                         color: colorNames[colorIndex] == 'Black'
                             ? Colors.white
                             : Colors.black),
@@ -108,10 +94,7 @@ class MainPage extends StatelessWidget {
                 return Container(
                   color: Colors.grey[300],
                   child: Center(
-                    child: Icon(
-                      Icons.backspace,
-                      color: Colors.black,
-                    ),
+                    child: Icon(Icons.backspace, color: Colors.black, size: 65),
                   ),
                 );
               } else {
@@ -134,7 +117,7 @@ class MainPage extends StatelessWidget {
                   child: Center(
                     child: Text(
                       buttons[buttonIndex],
-                      style: TextStyle(color: Colors.black),
+                      style: TextStyle(fontSize: 65, color: Colors.black),
                     ),
                   ),
                 );
